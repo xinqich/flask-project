@@ -1,4 +1,3 @@
-
 from flask import Flask
 
 app = Flask(__name__)
@@ -8,9 +7,11 @@ app = Flask(__name__)
 def hello():
     return 'Hello, world!'
 
+
 @app.route('/info')
 def info():
     return 'This is an informational page.'
+
 
 @app.route('/calc/<num1>/<num2>')
 def handle_calc(num1, num2):
@@ -19,8 +20,8 @@ def handle_calc(num1, num2):
         if isinstance(num, tuple):
             return num
 
-
     return f'The sum of {num1} and {num2} is {num1 + num2}'
+
 
 def isNumberValid(value) -> tuple[str, int] | float | int:
     try:
@@ -35,6 +36,7 @@ def isNumberValid(value) -> tuple[str, int] | float | int:
 @app.route('/reverse/')
 def handle_reverse_exception():
     return 'String must not be empty.', 400
+
 
 @app.route('/reverse/<string>')
 def handle_reverse(string):
@@ -52,6 +54,7 @@ def handle_user(name, age):
 
     except ValueError:
         return 'Age must be a positive integer.', 400
+
 
 if __name__ == '__main__':
     app.run(debug=True)
