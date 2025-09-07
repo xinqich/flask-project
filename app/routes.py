@@ -18,6 +18,10 @@ def hello():
 def info():
     return 'This is an informational page.'
 
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 
 @app.route('/calc/<num1>/<num2>')
 def handle_calc(num1, num2):
