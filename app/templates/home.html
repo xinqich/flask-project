@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
-    <h1>Welcome to Flask</h1>
+{% extends 'base.html' %}
+
+{% block title %}
+	Home
+{% endblock %}
+
+{% block content %}
+	<h2>Welcome to Flask</h2>
     <p>This is the home page of our Flask application.</p>
-    <a href="{{ url_for('about') }}">About us</a>
-    <a href="{{ url_for('contact') }}">Contact page</a>
-    <p>Here's a picture of our manager:</p>
-    <img src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="Bossy cat">
-</body>
-</html>
+{% endblock %}

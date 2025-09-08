@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-</head>
-<body>
-    <h1>About Us</h1>
+{% extends 'base.html' %}
+
+{% block title %}
+    About us
+{% endblock %}
+
+{% block content %}
+    <h2>About Us</h2>
     <p>This page provides information about our application.</p>
-    <a href="/">Go back</a>
-</body>
-</html>
+    <p>Here's a picture of our manager:</p>
+    <img src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="Bossy cat">
+{% endblock %}
